@@ -19,4 +19,5 @@ jobs:
       - run: make tools
       - run: GOARCH=amd64 GOOS=linux go build -o terraform-provider-azurerm .
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
+        uses: actions/upload-artifact@v3.0.0
+        
