@@ -17,10 +17,10 @@ jobs:
           go-version: '1.16.0'
       - run: bash scripts/gogetcookie.sh
       - run: make tools
-      - run: GOARCH=amd64 GOOS=linux go build -o terraform-provider-azurerm .
+      - run: GOARCH=amd64 GOOS=linux make build
       - name: Download a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
           name: provider
-          path: terraform-provider-azurerm
+          path: $GOPATH/bin/terraform-provider-azurerm
         
