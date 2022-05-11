@@ -1,12 +1,9 @@
 ---
 name: 32 Bit Build
 on:
-  pull_request:
-    types: ['opened', 'synchronize']
-    paths:
-      - '**.go'
-      - 'vendor/**'
-      - '.github/workflows/**'
+  push:
+    branches:
+      - "sradtest"
 
 jobs:
   compatability-32bit-test:
