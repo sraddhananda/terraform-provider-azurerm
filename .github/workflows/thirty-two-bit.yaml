@@ -21,9 +21,10 @@ jobs:
         name: Build
         env: 
           GOBIN: "/home/runner/go/bin"
+      - run: ls /home/runner/go/bin    
       - name: Download a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
           name: provider
-          path: $GOBIN
+          path: "/home/runner/go/bin"
         
