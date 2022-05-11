@@ -124,7 +124,9 @@ func (p *GRPCProvider) GetSchema() (resp providers.GetSchemaResponse) {
 	// Note: this option is marked as EXPERIMENTAL in the grpc API.
 	const maxRecvSize = 64 << 20
 	protoResp, err := p.client.GetSchema(p.ctx, new(proto.GetProviderSchema_Request), grpc.MaxRecvMsgSizeCallOption{MaxRecvMsgSize: maxRecvSize})
+
 	if err != nil {
+		log.Printf("[TRACE] protoResp err: %v", err)
 		resp.Diagnostics = resp.Diagnostics.Append(err)
 		return resp
 	}

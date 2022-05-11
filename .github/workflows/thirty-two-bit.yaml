@@ -22,5 +22,5 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: provider
-          path: $GOPATH/bin/terraform-provider-azurerm
+          path: $GOPATH/bin
         
